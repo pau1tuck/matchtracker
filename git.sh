@@ -1,13 +1,14 @@
 #!/bin/bash
 
+datetime=$(date "+%Y-%m-%dT%H:%M%Z")
+echo $datetime
+
 # Prompt for a custom commit message
 read -p "Commit message: " user_commit_msg
 
-# Add all changes
+# Combine the date/time and user's commit message
+# full_commit_msg="$datetime - $user_commit_msg"
+
 git add .
-
-# Commit with the user's message
-git commit -m "$user_commit_msg"
-
-# Push to the main branch
+git commit -m "\$user_commit_msg\""
 git push -u origin main
