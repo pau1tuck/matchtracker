@@ -3,24 +3,27 @@ import http.client
 import datetime
 import os
 
+# import json
+
 # Load environmental variables
 load_dotenv()
 
 headers = {
-    "x-rapidapi-host": "v3.football.api-sports.io",
+    "x-rapidapi-host": os.getenv("X_API_PROVIDER"),
     "x-rapidapi-key": os.getenv("X_RAPIDAPI_KEY"),
 }
 conn = http.client.HTTPSConnection("v3.football.api-sports.io")
 
-# Get today's date in the correct format
+# Get today's date and other variables in the correct format
 timezone = "Asia/Bangkok"
-today = datetime.date.today().strftime("%Y-%m-%d")
+today = datetime.date.today().strftime("%Y-%m-%d")  # e.g. 2024-02-18
 league = 39  # English Premier League
+season = 2023  # 2023/24
 
-# Append your queries here
+# Query parameters
 conn.request(
     "GET",
-    f"/fixtures?timezone={timezone}&league={league}&date={today}",
+    f"/fixtures?timezone={timezone}&league={league}&date={today}&season={season}",
     headers=headers,
 )
 
@@ -33,4 +36,4 @@ print(data.decode("utf-8"))  # Write data to the terminal
 with open("fixtures.json", "w") as f:
     f.write(data.decode("utf-8"))
 
-print("Data written to fixtures.json")
+print("Data written to fixtures.json.")

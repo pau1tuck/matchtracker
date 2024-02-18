@@ -1,8 +1,10 @@
 {
+
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
     "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit"
+        "source.fixAll": "explicit",
+        "source.organizeImports": "never"
     },
     "suggestions": "localityBonus",
     "[javascript]": {
