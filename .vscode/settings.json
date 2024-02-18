@@ -1,0 +1,48 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    "suggestions": "localityBonus",
+    "[javascript]": {
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.defaultFormatter": "biomejs.biome",
+        "typescript.preferences.importModuleSpecifier": "non-relative",
+    },
+    "[typescriptreact]": {
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.defaultFormatter": "biomejs.biome",
+    },
+    "css.validate": false,
+    "tailwindCSS.includeLanguages": {
+        "html": "html",
+        "javascript": "javascript",
+        "typescript": "typescript"
+        // Add other languages if needed
+    },
+    "tailwindCSS.emmetCompletions": true,
+    // Tailwind CSS Autocomplete, add more if used in projects
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "classNames",
+        "containerClassName"
+    ],
+}
