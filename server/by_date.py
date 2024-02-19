@@ -12,7 +12,7 @@ headers = {
     "x-rapidapi-host": os.getenv("X_API_PROVIDER"),
     "x-rapidapi-key": os.getenv("X_RAPIDAPI_KEY"),
 }
-conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+connection = http.client.HTTPSConnection("v3.football.api-sports.io")
 
 # Get today's date and other variables in the correct format
 timezone = "Asia/Bangkok"
@@ -21,13 +21,13 @@ league = 39  # English Premier League
 season = 2023  # 2023/24
 
 # Query parameters
-conn.request(
+connection.request(
     "GET",
     f"/fixtures?timezone={timezone}&league={league}&date={today}&season={season}",
     headers=headers,
 )
 
-res = conn.getresponse()
+res = connection.getresponse()
 data = res.read()
 
 print(data.decode("utf-8"))  # Write data to the terminal
