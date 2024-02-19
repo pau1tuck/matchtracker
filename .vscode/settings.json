@@ -22,7 +22,7 @@
             "strings": "off"
         },
         "editor.defaultFormatter": "biomejs.biome",
-        "typescript.preferences.importModuleSpecifier": "non-relative",
+        "typescript.preferences.importModuleSpecifier": "non-relative"
     },
     "[typescriptreact]": {
         "editor.quickSuggestions": {
@@ -30,21 +30,16 @@
             "comments": "off",
             "strings": "off"
         },
-        "editor.defaultFormatter": "biomejs.biome",
+        "editor.defaultFormatter": "biomejs.biome"
     },
-    "css.validate": false,
-    "tailwindCSS.includeLanguages": {
-        "html": "html",
-        "javascript": "javascript",
-        "typescript": "typescript"
-        // Add other languages if needed
+    "[python]": {
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "on",
+            "strings": "on"
+        },
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "tailwindCSS.emmetCompletions": true,
-    // Tailwind CSS Autocomplete, add more if used in projects
-    "tailwindCSS.classAttributes": [
-        "class",
-        "className",
-        "classNames",
-        "containerClassName"
-    ],
+    "python.linting.flake8Enabled": true,
+    "css.validate": false
 }

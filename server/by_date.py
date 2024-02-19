@@ -15,7 +15,7 @@ headers = {
 connection = http.client.HTTPSConnection("v3.football.api-sports.io")
 
 # Get today's date and other variables in the correct format
-timezone = "Asia/Bangkok"
+timezone = "Europe/London"
 today = datetime.date.today().strftime("%Y-%m-%d")  # e.g. 2024-02-18
 league = 39  # English Premier League
 season = 2023  # 2023/24
