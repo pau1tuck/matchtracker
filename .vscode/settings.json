@@ -36,7 +36,7 @@
     "[python]": {
         "editor.formatOnPaste": false,
         "editor.formatOnSaveMode": "file",
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "mikoz.black-py",
         "editor.formatOnSave": true,
         "editor.quickSuggestions": {
             "comments": "off",
