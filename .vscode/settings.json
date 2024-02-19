@@ -7,6 +7,7 @@
         "source.organizeImports": "never"
     },
     "suggestions": "localityBonus",
+    "css.validate": false,
     "[javascript]": {
         "editor.quickSuggestions": {
             "other": "on",
@@ -33,13 +34,20 @@
         "editor.defaultFormatter": "biomejs.biome"
     },
     "[python]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSaveMode": "file",
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
         "editor.quickSuggestions": {
-            "other": "on",
-            "comments": "on",
-            "strings": "on"
-        },
-        "editor.defaultFormatter": "ms-python.black-formatter"
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
     },
-    "python.linting.flake8Enabled": true,
-    "css.validate": false
+    "black-formatter.args": [
+        "[\"--line-length\", \"79\"]"
+    ],
+    "black-formatter.importStrategy": "fromEnvironment",
+    "python.analysis.completeFunctionParens": true,
+    "python.terminal.activateEnvInCurrentTerminal": true
 }

@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Competition(models.Model):
-    competition_number = models.IntegerField()
+    competition_id = models.IntegerField()
     name = models.CharField(max_length=128)
     description = models.TextField()
     logo = models.ImageField(upload_to="competitions/")
