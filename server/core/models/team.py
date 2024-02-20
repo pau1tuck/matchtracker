@@ -1,5 +1,6 @@
 from django.db import models
 from .stadium import Stadium
+from .competition import Competition
 
 
 class Team(models.Model):
@@ -7,4 +8,4 @@ class Team(models.Model):
     founded = models.Integer()
     logo = models.ImageField(upload_to="competitions/")
     stadium = models.ForeignKey(Stadium, on_delete=models.CASCADE, related_name="Stadium")
-    competitions = [] # Array of Competition model
+    competitions = models.ManyToManyField(Competition, related_name='teams')
