@@ -11,13 +11,15 @@ class Fixture(models.Model):
     time = models.TimeField()
     timestamp = models.DateTimeField()
     league = models.ForeignKey(
-        Competition, on_delete=models.CASCADE, related_name="Competition"
+        Competition, on_delete=models.CASCADE, related_name="competition"
     )
     competition = models.CharField(max_length=128)
-    venue = models.foreign_key(Stadium, on_delete=models.CASCADE, related_name="Venue")
+    venue = models.foreign_key(
+        Stadium, on_delete=models.CASCADE, related_name="stadium"
+    )
     referee = models.CharField(max_length=128)
-    home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="Team")
-    away_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="Team")
+    home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team")
+    away_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team")
 
     def __str__(self):
         return f"{self.competition} - {self.date} - {self.venue}"

@@ -4,7 +4,7 @@ from utils.constants import COMPETITION_TYPES
 
 
 class Competition(models.Model):
-    competition_id = models.IntegerField()
+    competition_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=128)  # e.g. League One
     country = models.CharField(max_length=64, choices=COUNTRIES)  # e.g. England
     competition_type = models.CharField(
