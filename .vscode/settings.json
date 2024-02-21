@@ -36,7 +36,7 @@
     "[python]": {
         "editor.formatOnPaste": false,
         "editor.formatOnSaveMode": "file",
-        "editor.defaultFormatter": "mikoz.black-py",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
         "editor.quickSuggestions": {
             "comments": "off",
