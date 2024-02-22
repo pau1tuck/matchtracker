@@ -19,7 +19,7 @@ class Team(models.Model):
         Stadium, on_delete=models.CASCADE, related_name="stadium"
     )
     logo = models.ImageField(upload_to="teams/logos/")
-    icon = models.ImageField(upload_to="teams/icons/")
+    # ? icon = models.ImageField(upload_to="teams/icons/")  # Two-toned strips alongside the score on TNT. Use CSS and primary, secondary, (tertiary) colors to create a vertical rectangle with two colors.
     manager = models.CharField(
         max_length=128, null=True, blank=True
     )  # e.g. Erik Ten Hag
@@ -32,10 +32,25 @@ class Team(models.Model):
         max_length=16, null=True, blank=True
     )  # HEX color
     tertiary_color = models.CharField(max_length=16, null=True, blank=True)  # HEX color
+    home_kit = models.ImageField(
+        upload_to="teams/kits/england/manchester_united/home_kit.png",
+        null=True,
+        blank=True,
+    )
+    away_kit = models.ImageField(
+        upload_to="teams/kits/england/manchester_united/away_kit.png",
+        null=True,
+        blank=True,
+    )
+    third_kit = models.ImageField(
+        upload_to="teams/kits/england/manchester_united/third_kit.png",
+        null=True,
+        blank=True,
+    )
     official_website = models.URLField(max_length=200, null=True, blank=True)
     facebook = models.URLField(max_length=200, null=True, blank=True)
     twitter = models.URLField(max_length=200, null=True, blank=True)
     instagram = models.URLField(max_length=200, null=True, blank=True)
 
 
-# Using both null=True and blank=True is common for non-string fields when you want to allow the field to be optional both at the form level (no validation error for empty values) and at the database level (storing an actual NULL value).
+# Using both null=True and blank=True is common for non-string fields when you want to allow the field to be optional both at the form levyel (no validation error for empty values) and at the database level (storing an actual NULL value).
