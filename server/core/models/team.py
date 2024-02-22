@@ -6,24 +6,31 @@ from utils.constants import COUNTRIES, CONTINENTS, FEDERATIONS
 
 class Team(models.Model):
     team_id = models.IntegerField(primary_key=True)  # e.g. 45
-    name = models.CharField(max_length=128)  # e.g. England
-    short_name = models.CharField(max_length=128, null=True, blank=True)
-    abbreviation = models.CharField(max_length=3)  # ENG
-    country = models.CharField(max_length=64, choices=COUNTRIES)  # e.g. International
+    name = models.CharField(max_length=128)  # e.g. Manchester United
+    abbreviation = models.CharField(max_length=3)  # MNU
+    short_name = models.CharField(max_length=128, null=True, blank=True)  # e.g. Man Utd
+    country = models.CharField(max_length=64, choices=COUNTRIES)  # e.g. England
     continent = models.CharField(max_length=32, choices=CONTINENTS)  # e.g. Europe
     founded = models.IntegerField(null=True, blank=True)  # e.g. 1872
     federation = models.CharField(  # e.g. UEFA
         max_length=32, choices=FEDERATIONS, null=True, blank=True
     )
-    stadium = models.ForeignKey(  # e.g. Wembley Stadium
+    stadium = models.ForeignKey(  # e.g. Old Trafford
         Stadium, on_delete=models.CASCADE, related_name="stadium"
     )
     logo = models.ImageField(upload_to="teams/logos/")
+    manager = models.CharField(
+        max_length=128, null=True, blank=True
+    )  # e.g. Erik Ten Hag
+    owner = models.CharField(max_length=128, null=True, blank=True)  # e.g.
+    sponsor = models.CharField(max_length=128, null=True, blank=True)
     competitions = models.ManyToManyField(Competition, related_name="competitions")
-    manager = models.CharField(max_length=128, null=True, blank=True)
     world_ranking = models.IntegerField(null=True, blank=True)
-    primary_color = models.CharField(max_length=7, null=True, blank=True)  # HEX color
-    secondary_color = models.CharField(max_length=7, null=True, blank=True)  # HEX color
+    primary_color = models.CharField(max_length=16, null=True, blank=True)  # HEX color
+    secondary_color = models.CharField(
+        max_length=16, null=True, blank=True
+    )  # HEX color
+    tertiary_color = models.CharField(max_length=16, null=True, blank=True)  # HEX color
     official_website = models.URLField(max_length=200, null=True, blank=True)
     facebook = models.URLField(max_length=200, null=True, blank=True)
     twitter = models.URLField(max_length=200, null=True, blank=True)
