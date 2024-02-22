@@ -18,15 +18,16 @@ class Team(models.Model):
     stadium = models.ForeignKey(  # e.g. Old Trafford
         Stadium, on_delete=models.CASCADE, related_name="stadium"
     )
-    logo = models.ImageField(upload_to="teams/logos/")
-    # ? icon = models.ImageField(upload_to="teams/icons/")  # Two-toned strips alongside the score on TNT. Use CSS and primary, secondary, (tertiary) colors to create a vertical rectangle with two colors.
+    owner = models.CharField(max_length=128, null=True, blank=True)  # e.g.
     manager = models.CharField(
         max_length=128, null=True, blank=True
     )  # e.g. Erik Ten Hag
-    owner = models.CharField(max_length=128, null=True, blank=True)  # e.g.
     sponsor = models.CharField(max_length=128, null=True, blank=True)
     competitions = models.ManyToManyField(Competition, related_name="competitions")
     world_ranking = models.IntegerField(null=True, blank=True)
+    # Design
+    logo = models.ImageField(upload_to="teams/logos/")
+    # ? icon = models.ImageField(upload_to="teams/icons/")  # Two-toned strips alongside the score on TNT. Use CSS and primary, secondary, (tertiary) colors to create a vertical rectangle with two colors.
     primary_color = models.CharField(max_length=16, null=True, blank=True)  # HEX color
     secondary_color = models.CharField(
         max_length=16, null=True, blank=True
@@ -47,10 +48,11 @@ class Team(models.Model):
         null=True,
         blank=True,
     )
+    # Social Media
     official_website = models.URLField(max_length=200, null=True, blank=True)
     facebook = models.URLField(max_length=200, null=True, blank=True)
     twitter = models.URLField(max_length=200, null=True, blank=True)
     instagram = models.URLField(max_length=200, null=True, blank=True)
 
 
-# Using both null=True and blank=True is common for non-string fields when you want to allow the field to be optional both at the form levyel (no validation error for empty values) and at the database level (storing an actual NULL value).
+# Using both null=True and blank=True is common for non-string fields when you want to allow the field to be optional both at the form level (no validation error for empty values) and at the database level (storing an actual NULL value).
