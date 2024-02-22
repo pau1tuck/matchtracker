@@ -7,8 +7,8 @@ from utils.constants import COUNTRIES, CONTINENTS, FEDERATIONS
 class Team(models.Model):
     team_id = models.IntegerField(primary_key=True)  # e.g. 45
     name = models.CharField(max_length=128)  # e.g. Manchester United
-    abbreviation = models.CharField(max_length=3)  # MNU
     short_name = models.CharField(max_length=128, null=True, blank=True)  # e.g. Man Utd
+    abbreviation = models.CharField(max_length=3)  # MNU
     country = models.CharField(max_length=64, choices=COUNTRIES)  # e.g. England
     continent = models.CharField(max_length=32, choices=CONTINENTS)  # e.g. Europe
     founded = models.IntegerField(null=True, blank=True)  # e.g. 1872
@@ -19,6 +19,7 @@ class Team(models.Model):
         Stadium, on_delete=models.CASCADE, related_name="stadium"
     )
     logo = models.ImageField(upload_to="teams/logos/")
+    icon = models.ImageField(upload_to="teams/icons/")
     manager = models.CharField(
         max_length=128, null=True, blank=True
     )  # e.g. Erik Ten Hag
