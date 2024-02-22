@@ -20,6 +20,6 @@ class Fixture(models.Model):
     referee = models.CharField(max_length=128)
     home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team")
     away_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team")
-
+    first_name = mode.
     def __str__(self):
         return f"{self.competition} - {self.date} - {self.venue}"

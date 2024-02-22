@@ -34,20 +34,16 @@
         "editor.defaultFormatter": "biomejs.biome"
     },
     "[python]": {
+        "editor.formatOnSave": true,
         "editor.formatOnPaste": false,
         "editor.formatOnSaveMode": "file",
         "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnSave": true,
         "editor.quickSuggestions": {
             "comments": "off",
             "strings": "off",
             "other": "off"
         }
     },
-    "black-formatter.args": [
-        "[\"--line-length\", \"79\"]"
-    ],
-    "black-formatter.importStrategy": "fromEnvironment",
     "python.analysis.completeFunctionParens": true,
     "python.terminal.activateEnvInCurrentTerminal": true
 }
