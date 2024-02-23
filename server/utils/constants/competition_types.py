@@ -5,4 +5,5 @@ COMPETITION_TYPES = [
     ('Friendly, "Friendly'),
     ("Charity", "Charity"),
     ("Exhibition", "Exhibition"),
+    ("Tribute", "Tribute"),
 ]
