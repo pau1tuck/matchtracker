@@ -17,7 +17,10 @@ EXPOSE 5000
 
 # Define environment variable
 ENV PYTHONDONTWRITEBYTECODE 1
+# This tells Python not to write .pyc files, which are compiled bytecode. Skipping these can make your Docker images smaller and can be useful for development when you want to avoid having compiled files around that might obscure the source.
+
 ENV PYTHONUNBUFFERED 1
+# Normally, Python buffers its output; this setting forces it to run in unbuffered mode. It means Python's output (like print statements or logs) is sent straight to the terminal without being buffered. This is really useful in Docker, where you want to see your logs in real-time, especially when debugging.
 
 # Run the application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
