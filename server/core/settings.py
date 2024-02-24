@@ -76,7 +76,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 
 DATABASES = {
     "default": {
-        # "ENGINE": os.getenv("DB_ENGINE"),
+        "ENGINE": os.getenv("DB_ENGINE") or "django.db.backends.sqlite3",
         # "NAME": os.getenv("DB_NAME"),
         # "USER": os.getenv("DB_USER"),
         # "PASSWORD": os.getenv("DB_PASSWORD"),
@@ -86,7 +86,7 @@ DATABASES = {
 }
 
 
-AUTH_USER_MODEL = "users.User"
+# AUTH_USER_MODEL = "users.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
