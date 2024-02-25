@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  backend:
+    build: ./server
+    ports:
+      - "8000:8000" # Map port 8000 inside the container to port 8000 on your host
+    volumes:
+      - ./server:/app # Mount the backend code into the container
+    environment:
+      PYTHONDONTWRITEBYTECODE: 1
+      PYTHONUNBUFFERED: 1
+
+  frontend:
+    build: ./web
+    ports:
+      - "3000:3000" # Map port 3000 inside the container to port 3000 on your host
+    volumes:
+      - ./web:/app # Mount the frontend code into the container

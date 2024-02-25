@@ -13,7 +13,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 8000 available to the world outside this container
-EXPOSE 5000
+EXPOSE 8000
 
 # Define environment variable
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -23,4 +23,4 @@ ENV PYTHONUNBUFFERED 1
 # Normally, Python buffers its output; this setting forces it to run in unbuffered mode. It means Python's output (like print statements or logs) is sent straight to the terminal without being buffered. This is really useful in Docker, where you want to see your logs in real-time, especially when debugging.
 
 # Run the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
