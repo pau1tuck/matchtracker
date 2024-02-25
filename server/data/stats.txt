@@ -4,3 +4,4 @@
 - Progressive Passes (moving closer to goal)
 - Carry Distance
 - Possession Value (complex new 10-second stat)
+- Scan Rate + Forward Pass Completion Rate
