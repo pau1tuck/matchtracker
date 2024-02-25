@@ -1,4 +1,6 @@
-version: '3.8'
+# Run `docker-compose up`
+
+version: '1.0.1'
 services:
   backend:
     build: ./server

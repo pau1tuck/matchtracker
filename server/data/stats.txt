@@ -1,6 +1,6 @@
-Goals from set pieces
-Expected assists (ExA)
-Pressure (1-player pressing)
-Progressive Passes (moving closer to goal)
-Carry Distance
-Possession Value (complex new 10-second stat)
+- Goals from set pieces
+- Expected assists (ExA)
+- Pressure (1-player pressing)
+- Progressive Passes (moving closer to goal)
+- Carry Distance
+- Possession Value (complex new 10-second stat)
