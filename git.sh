@@ -10,5 +10,6 @@ read -p "Commit message: " user_commit_msg
 # full_commit_msg="$datetime - $user_commit_msg"
 
 git add .
+# Commit with the new message
 git commit -m "$user_commit_msg"
 git push -u origin main
