@@ -6,8 +6,9 @@ from .stadium import Stadium
 
 class Fixture(models.Model):
     season = models.CharField(max_length=16)
-    date = models.DateField()
     week_number = models.IntegerField()
+    date = models.DateField()
+    status = models.Charfield(max_length=8)
     time = models.TimeField()
     timestamp = models.DateTimeField()
     league = models.ForeignKey(
